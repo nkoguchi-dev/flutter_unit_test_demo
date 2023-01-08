@@ -1,16 +1,11 @@
 # flutter_unit_test_demo
 
-A new Flutter project.
+FlutterのUnitTestを作る時に、テストの方法が分からずあれこれ調べたやり方を自分なりにメモしておくProjectです。
 
-## Getting Started
+## Navigator.pop()の値をテストする方法
 
-This project is a starting point for a Flutter application.
+Widgetから遷移元に返している値をテストしたい時に利用しました。
 
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+### test/presentation/screen_return_value_test.dart
+MaterialApp作成時にMockしたNavigatorObserverを設定して、テスト対象のWidgetがpopした際に呼ばれるrouteObserver.didPopの第一引数のrouteをcaptureしてテストを行います。
+理屈は分かるのですが、そこをMockしようとか考えつかないよなぁ。
